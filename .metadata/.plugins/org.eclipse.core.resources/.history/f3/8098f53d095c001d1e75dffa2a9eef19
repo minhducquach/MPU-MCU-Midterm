@@ -1,0 +1,27 @@
+/*
+ * display.h
+ *
+ *  Created on: Nov 4, 2022
+ *      Author: Minh Duc Quach
+ */
+
+#ifndef INC_DISPLAY_H_
+#define INC_DISPLAY_H_
+
+#include "global.h"
+
+void clearLEDs(int);
+void clear7SEGs();
+void clearEN();
+void clearAllLEDs();
+
+void openAllLEDs();
+void blinkLEDs(int, int);
+
+void setLEDs(int, int);
+void display7SEG(int);
+
+void choose7SEG(int);
+
+void updateBuffer(int, int);
+#endif /* INC_DISPLAY_H_ */

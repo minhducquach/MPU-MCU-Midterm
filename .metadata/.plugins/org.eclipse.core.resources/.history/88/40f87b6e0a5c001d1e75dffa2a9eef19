@@ -1,0 +1,26 @@
+/*
+ * display.c
+ *
+ *  Created on: Nov 4, 2022
+ *      Author: Minh Duc Quach
+ */
+
+#include "global.h"
+#include "display.h"
+
+int led_buffer[4] = {0, 0, 0, 0};
+
+void clearLEDs(){
+	HAL_GPIO_WritePin(GPIOA, LED_1|LED_2|LED_3, GPIO_PIN_SET);
+}
+
+void clear7SEGs(){
+	HAL_GPIO_WritePin(GPIOB, SEG1_0_Pin|SEG1_1_Pin|SEG1_2_Pin|SEG1_3_Pin
+	                          |SEG1_4_Pin|SEG1_5_Pin|SEG1_6_Pin, GPIO_PIN_SET);
+}
+
+void clearEN(){
+	HAL_GPIO_WritePin(GPIOA, EN0_Pin|EN1_Pin|EN2_Pin|EN3_Pin, GPIO_PIN_SET);
+}
+
+
