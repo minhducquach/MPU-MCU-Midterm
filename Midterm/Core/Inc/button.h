@@ -14,9 +14,12 @@
 #define BUTTON_IS_PRESSED	GPIO_PIN_RESET
 #define BUTTON_IS_RELEASED	GPIO_PIN_SET
 
+#define	DOUBLE_PRESSED_TIME 30
+#define LONG_PRESSED_TIME	300
+
 void button_reading();
 int isButtonPressed(int);
-int isButtonPressed1s(int);
-int isButtonDoublePressed(int);
+int isButtonPressed3s(int);
+//int isButtonDoublePressed(int);
 
 #endif /* INC_BUTTON_H_ */

@@ -1,0 +1,12 @@
+/*
+ * fsm_manual.c
+ *
+ *  Created on: Nov 4, 2022
+ *      Author: Minh Duc Quach
+ */
+
+#include "fsm_long_pressed.h"
+
+void fsm_long_pressed_run(){
+
+}

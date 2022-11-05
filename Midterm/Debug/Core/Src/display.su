@@ -1,8 +1,9 @@
-display.c:12:6:clearLEDs	8	static
-display.c:16:6:clear7SEGs	8	static
-display.c:21:6:clearEN	8	static
-display.c:25:6:blinkLEDs	16	static
-display.c:41:6:setLEDs	16	static
-display.c:63:6:display7SEG	16	static
-display.c:114:6:choose7SEG	16	static
-display.c:145:6:updateBuffer	16	static
+display.c:17:6:clear7SEGs	8	static
+display.c:22:6:clearEN	8	static
+display.c:26:6:openEN	8	static
+display.c:68:6:display7SEG	16	static
+display.c:150:6:resetBuffer	8	static
+display.c:155:6:increaseBuffer	16	static
+display.c:163:6:decreaseBuffer	16	static
+display.c:168:6:updateBuffer	16	static
+display.c:173:5:bufferValue	4	static

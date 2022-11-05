@@ -1,0 +1,25 @@
+/*
+ * fsm_automatic.c
+ *
+ *  Created on: Nov 4, 2022
+ *      Author: Minh Duc Quach
+ */
+
+#include "fsm_short_pressed.h"
+
+void fsm_short_pressed_run(){
+	switch(status){
+	case INIT:
+		break;
+	case COUNTER_RESET:
+		break;
+	case COUNTER_INC:
+		break;
+	case COUNTER_DEC:
+		break;
+	default:
+		break;
+	}
+}
+
+

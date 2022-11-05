@@ -7,10 +7,10 @@
 
 #include "software_timer.h"
 
-int timerFlag[NO_OF_COUNTERS] = {0, 0};
+int timerFlag[NO_OF_COUNTERS] = {0};
 int timerFlag7SEG = 0;
 
-int counter[NO_OF_COUNTERS] = {0,0};
+int counter[NO_OF_COUNTERS] = {0};
 int counter7SEG = 0;
 
 void setTimer(int duration){
@@ -49,12 +49,12 @@ int cnt = 100;
 void HAL_TIM_PeriodElapsedCallback (TIM_HandleTypeDef *htim){
 	if(htim->Instance == TIM2){
 		timerRun();
-		timerRun7SEG();
+//		timerRun7SEG();
 		button_reading();
 		cnt--;
 		if (cnt <= 0){
 			cnt = 100;
-			HAL_GPIO_TogglePin(GPIOA, Test_Pin);
+			HAL_GPIO_TogglePin(GPIOA, DEBUG_LED_Pin);
 		}
 	}
 }

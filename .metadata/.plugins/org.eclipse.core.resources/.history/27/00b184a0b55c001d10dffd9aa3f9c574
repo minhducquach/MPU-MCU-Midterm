@@ -1,0 +1,48 @@
+/*
+ * fsm_automatic.c
+ *
+ *  Created on: Nov 4, 2022
+ *      Author: Minh Duc Quach
+ */
+
+#include "fsm_short_pressed.h"
+
+void fsm_short_pressed_run(){
+	switch(status){
+	case INIT:
+		clearEN();
+		resetBuffer();
+		openEN();
+		status = COUNTER_RESET;
+		setTimer(10000);
+		break;
+	case COUNTER_RESET:
+		if (isButtonPressed(0)){
+			clear7SEGs();
+			resetBuffer();
+			status = COUNTER_RESET;
+			setTimer(10000);
+		}
+		if (isButtonPressed(1)){
+			clear7SEGs();
+			increaseBuffer(1);
+			status = COUNTER_INC;
+			setTimer(1000);
+		}
+		if (isButtonPressed(2)){
+			clear7SEGs();
+			updateBuffer(9);
+			status = COUNTER_DEC;
+			setTimer(1000);
+		}
+		break;
+	case COUNTER_INC:
+		break;
+	case COUNTER_DEC:
+		break;
+	default:
+		break;
+	}
+}
+
+

@@ -10,7 +10,7 @@
 
 #include "global.h"
 
-#define NO_OF_COUNTERS	2
+#define NO_OF_COUNTERS	1
 #define TICK			10
 #define SECOND			1000
 

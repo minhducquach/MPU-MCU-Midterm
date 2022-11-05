@@ -1,0 +1,18 @@
+/*
+ * global.h
+ *
+ *  Created on: Nov 4, 2022
+ *      Author: Minh Duc Quach
+ */
+
+#ifndef INC_GLOBAL_H_
+#define INC_GLOBAL_H_
+
+#include <fsm_short_pressed.h>
+#include "button.h"
+#include "display.h"
+#include "fsm_manual.h"
+#include "software_timer.h"
+#include "main.h"
+
+#endif /* INC_GLOBAL_H_ */

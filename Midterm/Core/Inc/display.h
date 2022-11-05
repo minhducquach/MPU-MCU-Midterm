@@ -10,16 +10,29 @@
 
 #include "global.h"
 
-void clearLEDs();
+#define NO_OF_7SEGS	1
+#define TIMER_7SEG	10
+
+//extern int index7SEG;
+
+//void clearLEDs();
 void clear7SEGs();
 void clearEN();
 
-void blinkLEDs(int);
+void openEN();
 
-void setLEDs(int);
+//void blinkLEDs(int);
+
+//void setLEDs(int);
 void display7SEG(int);
 
-void choose7SEG(int);
+//void choose7SEG(int);
 
-void updateBuffer(int, int);
+int bufferValue();
+void updateBuffer(int);
+void resetBuffer();
+void increaseBuffer(int);
+void decreaseBuffer(int);
+
+//void control7SEG();
 #endif /* INC_DISPLAY_H_ */
