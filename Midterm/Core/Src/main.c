@@ -96,9 +96,10 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-	  //process long pressed and short pressed events
+	  //process button pressing events
 	  fsm_short_pressed_run();
 	  fsm_long_pressed_run();
+	  fsm_automatic_run();
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */

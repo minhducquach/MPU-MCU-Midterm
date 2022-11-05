@@ -20,11 +20,11 @@ void fsm_short_pressed_run(){
 		break;
 	case COUNTER_RESET:
 		//10s passed, do nothing
-		if (timerFlag[0] == 1){
+		if (timerFlag == 1){
 			clear7SEGs();
 			resetBuffer();
 			status = COUNTER_RESET;
-			setTimer(10000);
+			setTimer(1000);
 		}
 		//pressed RESET, do nothing
 		if (isButtonPressed(0)){
@@ -49,13 +49,13 @@ void fsm_short_pressed_run(){
 		}
 		break;
 	case COUNTER_INC:
-		//10s passed, decrement counter (if counter != 0) and then switch to DEC
-		if (timerFlag[0] == 1){
+		//10s passed, decrement counter (if counter != 0) and then switch to DEC_AUTO
+		if (timerFlag == 1){
 			clear7SEGs();
 			if (bufferValue() != 0) decreaseBuffer(1);
 			else resetBuffer();
-			status = COUNTER_DEC;
-			setTimer(10000);
+			status = COUNTER_DEC_AUTO;
+			setTimer(1000);
 		}
 		//pressed RESET, reset counter and then switch to RESET
 		if (isButtonPressed(0)){
@@ -89,18 +89,17 @@ void fsm_short_pressed_run(){
 		}
 		break;
 	case COUNTER_DEC:
-		//10s passed, decrement counter. If counter == 0, switch to RESET
-		if (timerFlag[0] == 1){
+		//10s passed, decrement counter (if != 0) and then switch to DEC_AUTO
+		if (timerFlag == 1){
 			clear7SEGs();
 			if (bufferValue() == 0){
 				resetBuffer();
-				status = COUNTER_RESET;
 			}
 			else{
 				decreaseBuffer(1);
-				status = COUNTER_DEC;
 			}
-			setTimer(10000);
+			status = COUNTER_DEC_AUTO;
+			setTimer(1000);
 		}
 		//pressed RESET, reset counter and then switch to RESET
 		if (isButtonPressed(0)){

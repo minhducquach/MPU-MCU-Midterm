@@ -8,27 +8,23 @@
 #include "software_timer.h"
 
 //flag is on after a specific duration
-int timerFlag[NO_OF_COUNTERS] = {0};
+int timerFlag = 0;
 
 //counter to determine if flag is on or not
-int counter[NO_OF_COUNTERS] = {0};
+int counter = 0;
 
 //set counter and reset flag
 void setTimer(int duration){
-	for (int i = 0; i < NO_OF_COUNTERS; i++){
-		counter[i] = duration / TICK;
-		timerFlag[i] = 0;
-	}
+	counter = duration / TICK;
+	timerFlag = 0;
 }
 
 //decrement counter and check if flag is on or not
 void timerRun(){
-	for (int i = 0; i < NO_OF_COUNTERS; i++){
-		if (counter[i] > 0){
-			counter[i]--;
-			if (counter[i] <= 0){
-				timerFlag[i] = 1;
-			}
+	if (counter > 0){
+		counter--;
+		if (counter <= 0){
+			timerFlag = 1;
 		}
 	}
 }

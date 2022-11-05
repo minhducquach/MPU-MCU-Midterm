@@ -10,11 +10,10 @@
 
 #include "global.h"
 
-#define NO_OF_COUNTERS	1
 #define TICK			10
 #define SECOND			1000
 
-extern int timerFlag[NO_OF_COUNTERS];
+extern int timerFlag;
 
 void setTimer(int);
 

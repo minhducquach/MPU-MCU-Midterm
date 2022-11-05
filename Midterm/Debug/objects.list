@@ -1,5 +1,6 @@
 "./Core/Src/button.o"
 "./Core/Src/display.o"
+"./Core/Src/fsm_automatic.o"
 "./Core/Src/fsm_long_pressed.o"
 "./Core/Src/fsm_short_pressed.o"
 "./Core/Src/global.o"

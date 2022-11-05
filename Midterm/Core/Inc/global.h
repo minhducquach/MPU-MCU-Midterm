@@ -8,8 +8,9 @@
 #ifndef INC_GLOBAL_H_
 #define INC_GLOBAL_H_
 
-#include <fsm_long_pressed.h>
-#include <fsm_short_pressed.h>
+#include "fsm_automatic.h"
+#include "fsm_long_pressed.h"
+#include "fsm_short_pressed.h"
 #include "button.h"
 #include "display.h"
 #include "software_timer.h"
@@ -25,5 +26,6 @@ extern int status;
 #define COUNTER_INC_LONG	12
 #define COUNTER_DEC_LONG	13
 
+#define COUNTER_DEC_AUTO	23
 
 #endif /* INC_GLOBAL_H_ */

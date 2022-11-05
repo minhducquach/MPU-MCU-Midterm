@@ -1,0 +1,27 @@
+/*
+ * fsm_automatic.c
+ *
+ *  Created on: Nov 5, 2022
+ *      Author: Minh Duc Quach
+ */
+
+#include "fsm_automatic.h"
+
+void fsm_automatic_run(){
+	switch(status){
+	case COUNTER_DEC_AUTO:
+		if (bufferValue() == 0) status = COUNTER_RESET;
+		if (isButtonPressed(0)){
+
+		}
+		if (isButtonPressed(1)){
+
+		}
+		if (isButtonPressed(2)){
+
+		}
+		break;
+	default:
+		break;
+	}
+}
