@@ -29,7 +29,7 @@ void timerRun(){
 	}
 }
 
-int cnt = 50;	//counter for DEBUG_LED
+int cnt = 100;	//counter for DEBUG_LED
 
 //timer callback
 void HAL_TIM_PeriodElapsedCallback (TIM_HandleTypeDef *htim){
@@ -39,7 +39,7 @@ void HAL_TIM_PeriodElapsedCallback (TIM_HandleTypeDef *htim){
 		cnt--;
 		//toggle DEBUG_LED
 		if (cnt <= 0){
-			cnt = 50;
+			cnt = 100;
 			HAL_GPIO_TogglePin(GPIOA, DEBUG_LED_Pin);
 		}
 	}

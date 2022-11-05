@@ -1838,7 +1838,7 @@ void timerRun(){
 
 08000c40 <HAL_TIM_PeriodElapsedCallback>:
 
-int cnt = 100;	//counter for DEBUG_LED
+int cnt = 50;	//counter for DEBUG_LED
 
 //timer callback
 void HAL_TIM_PeriodElapsedCallback (TIM_HandleTypeDef *htim){
@@ -1867,9 +1867,9 @@ void HAL_TIM_PeriodElapsedCallback (TIM_HandleTypeDef *htim){
  8000c66:	681b      	ldr	r3, [r3, #0]
  8000c68:	2b00      	cmp	r3, #0
  8000c6a:	dc06      	bgt.n	8000c7a <HAL_TIM_PeriodElapsedCallback+0x3a>
-			cnt = 100;
+			cnt = 50;
  8000c6c:	4b05      	ldr	r3, [pc, #20]	; (8000c84 <HAL_TIM_PeriodElapsedCallback+0x44>)
- 8000c6e:	2264      	movs	r2, #100	; 0x64
+ 8000c6e:	2232      	movs	r2, #50	; 0x32
  8000c70:	601a      	str	r2, [r3, #0]
 			HAL_GPIO_TogglePin(GPIOA, DEBUG_LED_Pin);
  8000c72:	2120      	movs	r1, #32

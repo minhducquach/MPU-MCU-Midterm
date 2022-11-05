@@ -1650,3 +1650,49 @@
 
 
 2022-11-05 13:26:26,377 [INFO] Activator:178 - !SESSION log4j initialized
+2022-11-05 20:14:14,893 [INFO] Activator:177 - 
+
+
+2022-11-05 20:14:14,907 [INFO] Activator:178 - !SESSION log4j initialized
+2022-11-05 20:18:42,856 [INFO] RetryExec:97 - I/O exception (java.net.SocketException) caught when processing request to {s}->https://sw-center.st.com:443: Software caused connection abort: connect
+2022-11-05 20:18:42,856 [INFO] RetryExec:113 - Retrying request to {s}->https://sw-center.st.com:443
+2022-11-05 20:18:42,856 [INFO] RetryExec:97 - I/O exception (java.net.SocketException) caught when processing request to {s}->https://sw-center.st.com:443: Network is unreachable: connect
+2022-11-05 20:18:42,856 [INFO] RetryExec:113 - Retrying request to {s}->https://sw-center.st.com:443
+2022-11-05 20:18:42,872 [INFO] RetryExec:97 - I/O exception (java.net.SocketException) caught when processing request to {s}->https://sw-center.st.com:443: Network is unreachable: connect
+2022-11-05 20:18:42,872 [INFO] RetryExec:113 - Retrying request to {s}->https://sw-center.st.com:443
+2022-11-05 20:18:42,887 [INFO] RetryExec:97 - I/O exception (java.net.SocketException) caught when processing request to {s}->https://sw-center.st.com:443: Network is unreachable: connect
+2022-11-05 20:18:42,887 [INFO] RetryExec:113 - Retrying request to {s}->https://sw-center.st.com:443
+2022-11-05 20:18:42,903 [INFO] RetryExec:97 - I/O exception (java.net.SocketException) caught when processing request to {s}->https://sw-center.st.com:443: Network is unreachable: connect
+2022-11-05 20:18:42,903 [INFO] RetryExec:113 - Retrying request to {s}->https://sw-center.st.com:443
+2022-11-05 20:18:42,903 [INFO] RetryExec:97 - I/O exception (java.net.SocketException) caught when processing request to {s}->https://sw-center.st.com:443: Network is unreachable: connect
+2022-11-05 20:18:42,903 [INFO] RetryExec:113 - Retrying request to {s}->https://sw-center.st.com:443
+2022-11-05 20:18:43,111 [INFO] RetryExec:97 - I/O exception (java.net.SocketException) caught when processing request to {s}->https://sw-center.st.com:443: Network is unreachable: connect
+2022-11-05 20:18:43,111 [INFO] RetryExec:113 - Retrying request to {s}->https://sw-center.st.com:443
+2022-11-05 20:18:43,111 [INFO] RetryExec:97 - I/O exception (java.net.SocketException) caught when processing request to {s}->https://sw-center.st.com:443: Network is unreachable: connect
+2022-11-05 20:18:43,111 [INFO] RetryExec:113 - Retrying request to {s}->https://sw-center.st.com:443
+2022-11-05 20:18:43,111 [INFO] RetryExec:97 - I/O exception (java.net.SocketException) caught when processing request to {s}->https://sw-center.st.com:443: Network is unreachable: connect
+2022-11-05 20:18:43,126 [INFO] RetryExec:113 - Retrying request to {s}->https://sw-center.st.com:443
+2022-11-05 20:18:43,308 [INFO] RetryExec:97 - I/O exception (java.net.SocketException) caught when processing request to {s}->https://sw-center.st.com:443: Network is unreachable: connect
+2022-11-05 20:18:43,308 [INFO] RetryExec:113 - Retrying request to {s}->https://sw-center.st.com:443
+2022-11-05 20:18:43,308 [INFO] RetryExec:97 - I/O exception (java.net.SocketException) caught when processing request to {s}->https://sw-center.st.com:443: Network is unreachable: connect
+2022-11-05 20:18:43,308 [INFO] RetryExec:113 - Retrying request to {s}->https://sw-center.st.com:443
+2022-11-05 20:18:43,308 [INFO] RetryExec:97 - I/O exception (java.net.SocketException) caught when processing request to {s}->https://sw-center.st.com:443: Network is unreachable: connect
+2022-11-05 20:18:43,308 [INFO] RetryExec:113 - Retrying request to {s}->https://sw-center.st.com:443
+2022-11-05 20:18:43,530 [INFO] RetryExec:97 - I/O exception (java.net.SocketException) caught when processing request to {s}->https://sw-center.st.com:443: Network is unreachable: connect
+2022-11-05 20:18:43,530 [INFO] RetryExec:113 - Retrying request to {s}->https://sw-center.st.com:443
+2022-11-05 20:18:43,546 [INFO] RetryExec:97 - I/O exception (java.net.SocketException) caught when processing request to {s}->https://sw-center.st.com:443: Network is unreachable: connect
+2022-11-05 20:18:43,546 [INFO] RetryExec:113 - Retrying request to {s}->https://sw-center.st.com:443
+2022-11-05 20:18:43,561 [INFO] RetryExec:97 - I/O exception (java.net.SocketException) caught when processing request to {s}->https://sw-center.st.com:443: Network is unreachable: connect
+2022-11-05 20:18:43,561 [INFO] RetryExec:113 - Retrying request to {s}->https://sw-center.st.com:443
+2022-11-05 20:18:43,577 [INFO] RetryExec:97 - I/O exception (java.net.SocketException) caught when processing request to {s}->https://sw-center.st.com:443: Network is unreachable: connect
+2022-11-05 20:18:43,577 [INFO] RetryExec:113 - Retrying request to {s}->https://sw-center.st.com:443
+2022-11-05 20:18:43,594 [INFO] RetryExec:97 - I/O exception (java.net.SocketException) caught when processing request to {s}->https://sw-center.st.com:443: Network is unreachable: connect
+2022-11-05 20:18:43,594 [INFO] RetryExec:113 - Retrying request to {s}->https://sw-center.st.com:443
+2022-11-05 20:18:43,610 [INFO] RetryExec:97 - I/O exception (java.net.SocketException) caught when processing request to {s}->https://sw-center.st.com:443: Network is unreachable: connect
+2022-11-05 20:18:43,610 [INFO] RetryExec:113 - Retrying request to {s}->https://sw-center.st.com:443
+2022-11-05 20:18:43,641 [INFO] RetryExec:97 - I/O exception (java.net.SocketException) caught when processing request to {s}->https://sw-center.st.com:443: Network is unreachable: connect
+2022-11-05 20:18:43,641 [INFO] RetryExec:113 - Retrying request to {s}->https://sw-center.st.com:443
+2022-11-05 20:18:43,657 [INFO] RetryExec:97 - I/O exception (java.net.SocketException) caught when processing request to {s}->https://sw-center.st.com:443: Network is unreachable: connect
+2022-11-05 20:18:43,657 [INFO] RetryExec:113 - Retrying request to {s}->https://sw-center.st.com:443
+2022-11-05 20:18:43,657 [INFO] RetryExec:97 - I/O exception (java.net.SocketException) caught when processing request to {s}->https://sw-center.st.com:443: Network is unreachable: connect
+2022-11-05 20:18:43,657 [INFO] RetryExec:113 - Retrying request to {s}->https://sw-center.st.com:443
