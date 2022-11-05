@@ -7,64 +7,25 @@
 
 #include "display.h"
 
-//int index7SEG = 0;
-int led_buffer[NO_OF_7SEGS] = {0};
+int led_buffer[NO_OF_7SEGS] = {0};	//buffer for LED 7SEG
 
-//void clearLEDs(){
-//	HAL_GPIO_WritePin(GPIOA, LED_1_Pin|LED_2_Pin|LED_3_Pin, GPIO_PIN_SET);
-//}
-
+//turn off LED 7SEG
 void clear7SEGs(){
 	HAL_GPIO_WritePin(GPIOB, SEG0_Pin|SEG1_Pin|SEG2_Pin|SEG3_Pin
 	                          |SEG4_Pin|SEG5_Pin|SEG6_Pin, GPIO_PIN_SET);
 }
 
+//disable EN pin
 void clearEN(){
 	HAL_GPIO_WritePin(GPIOA, EN0_Pin, GPIO_PIN_SET);
 }
 
+//enable EN pin
 void openEN(){
 	HAL_GPIO_WritePin(GPIOA, EN0_Pin, GPIO_PIN_RESET);
 }
 
-//void blinkLEDs(int index){
-//	switch(index){
-//	case 0:
-//		HAL_GPIO_TogglePin(GPIOA, LED_1_Pin);
-//		break;
-//	case 1:
-//		HAL_GPIO_TogglePin(GPIOA, LED_2_Pin);
-//		break;
-//	case 2:
-//		HAL_GPIO_TogglePin(GPIOA, LED_3_Pin);
-//		break;
-//	default:
-//		break;
-//	}
-//}
-
-//void setLEDs(int index){
-//	switch(index){
-//	case 0:
-//		HAL_GPIO_WritePin(GPIOA, LED_1_Pin, GPIO_PIN_RESET);
-//		HAL_GPIO_WritePin(GPIOA, LED_2_Pin, GPIO_PIN_SET);
-//		HAL_GPIO_WritePin(GPIOA, LED_3_Pin, GPIO_PIN_SET);
-//		break;
-//	case 1:
-//		HAL_GPIO_WritePin(GPIOA, LED_1_Pin, GPIO_PIN_SET);
-//		HAL_GPIO_WritePin(GPIOA, LED_2_Pin, GPIO_PIN_RESET);
-//		HAL_GPIO_WritePin(GPIOA, LED_3_Pin, GPIO_PIN_SET);
-//		break;
-//	case 2:
-//		HAL_GPIO_WritePin(GPIOA, LED_1_Pin, GPIO_PIN_SET);
-//		HAL_GPIO_WritePin(GPIOA, LED_2_Pin, GPIO_PIN_SET);
-//		HAL_GPIO_WritePin(GPIOA, LED_3_Pin, GPIO_PIN_RESET);
-//		break;
-//	default:
-//		break;
-//	}
-//}
-
+//display counter value
 void display7SEG(int counter){
 	if (counter == 0){
 		clear7SEGs();
@@ -116,67 +77,31 @@ void display7SEG(int counter){
 	}
 }
 
-//void choose7SEG(int index = 0){
-//	switch ( index ) {
-//		case 0:
-//			// Display the first 7 SEG with led_buffer [0]
-//			HAL_GPIO_WritePin(GPIOA, EN1_Pin|EN2_Pin|EN3_Pin, GPIO_PIN_SET);
-//			display7SEG(led_buffer[0]);
-//			HAL_GPIO_WritePin(GPIOA, EN0_Pin, GPIO_PIN_RESET);
-//			break ;
-//		case 1:
-//			// Display the second 7 SEG with led_buffer [1]
-//			HAL_GPIO_WritePin(GPIOA, EN0_Pin|EN2_Pin|EN3_Pin, GPIO_PIN_SET);
-//			display7SEG(led_buffer[1]);
-//			HAL_GPIO_WritePin(GPIOA, EN1_Pin, GPIO_PIN_RESET);
-//			break ;
-//		case 2:
-//			// Display the third 7 SEG with led_buffer [2]
-//			HAL_GPIO_WritePin(GPIOA, EN1_Pin|EN0_Pin|EN3_Pin, GPIO_PIN_SET);
-//			display7SEG(led_buffer[2]);
-//			HAL_GPIO_WritePin(GPIOA, EN2_Pin, GPIO_PIN_RESET);
-//			break ;
-//		case 3:
-//			// Display the forth 7 SEG with led_buffer [3]
-//			HAL_GPIO_WritePin(GPIOA, EN1_Pin|EN2_Pin|EN0_Pin, GPIO_PIN_SET);
-//			display7SEG(led_buffer[3]);
-//			HAL_GPIO_WritePin(GPIOA, EN3_Pin, GPIO_PIN_RESET);
-//			break ;
-//		default :
-//			break ;
-//	}
-//}
-
+//reset buffer value to 0 and then display
 void resetBuffer(){
 	led_buffer[0] = 0;
 	display7SEG(led_buffer[0]);
 }
 
+//increment buffer value by 1 unit and then display
 void increaseBuffer(int value){
 	led_buffer[0] += value;
 	display7SEG(led_buffer[0]);
-//	led_buffer[1] = timer % 10;
-//	led_buffer[2] = mode / 10;
-//	led_buffer[3] = mode % 10;
 }
 
+//decrement buffer value by 1 unit and then display
 void decreaseBuffer(int value){
 	led_buffer[0] -= value;
 	display7SEG(led_buffer[0]);
 }
 
+//update buffer value with a specific number and then display
 void updateBuffer(int value){
 	led_buffer[0] = value;
 	display7SEG(led_buffer[0]);
 }
 
+//return current buffer value
 int bufferValue(){
 	return led_buffer[0];
 }
-//void control7SEG(){
-//	if (timerFlag7SEG == 1){
-//		if (index7SEG == NO_OF_7SEGS) index7SEG = 0;
-//		choose7SEG(index7SEG++);
-//		setTimer7SEG(TIMER_7SEG);
-//	}
-//}

@@ -20,6 +20,5 @@
 void button_reading();
 int isButtonPressed(int);
 int isButtonPressed3s(int);
-//int isButtonDoublePressed(int);
 
 #endif /* INC_BUTTON_H_ */

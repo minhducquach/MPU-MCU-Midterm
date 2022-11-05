@@ -1,0 +1,98 @@
+/*
+ * display.c
+ *
+ *  Created on: Nov 4, 2022
+ *      Author: Minh Duc Quach
+ */
+
+#include "display.h"
+
+int led_buffer[NO_OF_7SEGS] = {0};
+
+void clear7SEGs(){
+	HAL_GPIO_WritePin(GPIOB, SEG0_Pin|SEG1_Pin|SEG2_Pin|SEG3_Pin
+	                          |SEG4_Pin|SEG5_Pin|SEG6_Pin, GPIO_PIN_SET);
+}
+
+void clearEN(){
+	HAL_GPIO_WritePin(GPIOA, EN0_Pin, GPIO_PIN_SET);
+}
+
+void openEN(){
+	HAL_GPIO_WritePin(GPIOA, EN0_Pin, GPIO_PIN_RESET);
+}
+
+void display7SEG(int counter){
+	if (counter == 0){
+		clear7SEGs();
+		HAL_GPIO_WritePin(GPIOB, SEG0_Pin|SEG1_Pin|SEG2_Pin|SEG3_Pin
+			                          |SEG4_Pin|SEG5_Pin, GPIO_PIN_RESET);
+	}
+	else if (counter == 1){
+		clear7SEGs();
+		HAL_GPIO_WritePin(GPIOB, SEG1_Pin|SEG2_Pin, GPIO_PIN_RESET);
+	}
+	else if (counter == 2){
+		clear7SEGs();
+		HAL_GPIO_WritePin(GPIOB, SEG0_Pin|SEG1_Pin|SEG3_Pin
+			                          |SEG4_Pin|SEG6_Pin, GPIO_PIN_RESET);
+	}
+	else if (counter == 3){
+		clear7SEGs();
+		HAL_GPIO_WritePin(GPIOB, SEG0_Pin|SEG1_Pin|SEG2_Pin|SEG3_Pin
+						     	 	  |SEG6_Pin, GPIO_PIN_RESET);
+	}
+	else if (counter == 4){
+		clear7SEGs();
+		HAL_GPIO_WritePin(GPIOB, SEG1_Pin|SEG2_Pin|SEG5_Pin
+						     	 	  |SEG6_Pin, GPIO_PIN_RESET);
+	}
+	else if (counter == 5){
+		clear7SEGs();
+		HAL_GPIO_WritePin(GPIOB, SEG0_Pin|SEG2_Pin|SEG3_Pin
+						     	 	  |SEG5_Pin|SEG6_Pin, GPIO_PIN_RESET);
+	}
+	else if (counter == 6){
+		clear7SEGs();
+		HAL_GPIO_WritePin(GPIOB, SEG0_Pin|SEG2_Pin|SEG3_Pin
+									  |SEG4_Pin|SEG5_Pin|SEG6_Pin, GPIO_PIN_RESET);
+	}
+	else if (counter == 7){
+		clear7SEGs();
+		HAL_GPIO_WritePin(GPIOB, SEG0_Pin|SEG1_Pin|SEG2_Pin, GPIO_PIN_RESET);
+	}
+	else if (counter == 8){
+		clear7SEGs();
+		HAL_GPIO_WritePin(GPIOB, SEG0_Pin|SEG1_Pin|SEG2_Pin|SEG3_Pin
+						              |SEG4_Pin|SEG5_Pin|SEG6_Pin, GPIO_PIN_RESET);
+	}
+	else if (counter == 9){
+		clear7SEGs();
+		HAL_GPIO_WritePin(GPIOB, SEG0_Pin|SEG1_Pin|SEG2_Pin|SEG3_Pin
+						              |SEG5_Pin|SEG6_Pin, GPIO_PIN_RESET);
+	}
+}
+
+void resetBuffer(){
+	led_buffer[0] = 0;
+	display7SEG(led_buffer[0]);
+}
+
+void increaseBuffer(int value){
+	led_buffer[0] += value;
+	display7SEG(led_buffer[0]);
+}
+
+void decreaseBuffer(int value){
+	led_buffer[0] -= value;
+	display7SEG(led_buffer[0]);
+}
+
+void updateBuffer(int value){
+	led_buffer[0] = value;
+	display7SEG(led_buffer[0]);
+}
+
+int bufferValue(){
+	return led_buffer[0];
+}

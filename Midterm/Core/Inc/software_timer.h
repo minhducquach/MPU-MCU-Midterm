@@ -15,12 +15,9 @@
 #define SECOND			1000
 
 extern int timerFlag[NO_OF_COUNTERS];
-extern int timerFlag7SEG;
 
 void setTimer(int);
-void setTimer7SEG(int);
 
 void timerRun();
-void timerRun7SEG();
 
 #endif /* INC_SOFTWARE_TIMER_H_ */

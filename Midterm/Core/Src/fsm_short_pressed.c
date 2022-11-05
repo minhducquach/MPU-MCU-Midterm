@@ -8,33 +8,39 @@
 #include "fsm_short_pressed.h"
 
 void fsm_short_pressed_run(){
+	//isButtonPressed(0): RESET, (1): INC, (2): DEC. Same rule applies to isButtonPressed3s()
 	switch(status){
 	case INIT:
+		//switch to RESET state
 		clearEN();
 		resetBuffer();
 		openEN();
 		status = COUNTER_RESET;
-		setTimer(10000);
+		setTimer(10000);	//timeout 10s
 		break;
 	case COUNTER_RESET:
+		//10s passed, do nothing
 		if (timerFlag[0] == 1){
 			clear7SEGs();
 			resetBuffer();
 			status = COUNTER_RESET;
 			setTimer(10000);
 		}
+		//pressed RESET, do nothing
 		if (isButtonPressed(0)){
 			clear7SEGs();
 			resetBuffer();
 			status = COUNTER_RESET;
 			setTimer(10000);
 		}
+		//pressed INC, increment counter and then switch to INC
 		if (isButtonPressed(1)){
 			clear7SEGs();
 			increaseBuffer(1);
 			status = COUNTER_INC;
 			setTimer(10000);
 		}
+		//pressed DEC, decrement counter and then switch to DEC
 		if (isButtonPressed(2)){
 			clear7SEGs();
 			updateBuffer(9);
@@ -43,18 +49,22 @@ void fsm_short_pressed_run(){
 		}
 		break;
 	case COUNTER_INC:
+		//10s passed, decrement counter (if counter != 0) and then switch to DEC
 		if (timerFlag[0] == 1){
 			clear7SEGs();
 			if (bufferValue() != 0) decreaseBuffer(1);
+			else resetBuffer();
 			status = COUNTER_DEC;
 			setTimer(10000);
 		}
+		//pressed RESET, reset counter and then switch to RESET
 		if (isButtonPressed(0)){
 			clear7SEGs();
 			resetBuffer();
 			status = COUNTER_RESET;
 			setTimer(10000);
 		}
+		//pressed INC, increment counter
 		if (isButtonPressed(1)){
 			clear7SEGs();
 			if (bufferValue() == 9) resetBuffer();
@@ -62,6 +72,7 @@ void fsm_short_pressed_run(){
 			status = COUNTER_INC;
 			setTimer(10000);
 		}
+		//pressed DEC, decrement counter and then switch to DEC
 		if (isButtonPressed(2)){
 			clear7SEGs();
 			if (bufferValue() == 0) updateBuffer(9);
@@ -69,6 +80,7 @@ void fsm_short_pressed_run(){
 			status = COUNTER_DEC;
 			setTimer(10000);
 		}
+		//pressed INC for 3 seconds, increment counter and switch to COUNTER_INC_LONG
 		if (isButtonPressed3s(1)){
 			clear7SEGs();
 			if (bufferValue() == 9) resetBuffer();
@@ -77,6 +89,7 @@ void fsm_short_pressed_run(){
 		}
 		break;
 	case COUNTER_DEC:
+		//10s passed, decrement counter. If counter == 0, switch to RESET
 		if (timerFlag[0] == 1){
 			clear7SEGs();
 			if (bufferValue() == 0){
@@ -89,12 +102,14 @@ void fsm_short_pressed_run(){
 			}
 			setTimer(10000);
 		}
+		//pressed RESET, reset counter and then switch to RESET
 		if (isButtonPressed(0)){
 			clear7SEGs();
 			resetBuffer();
 			status = COUNTER_RESET;
 			setTimer(10000);
 		}
+		//pressed INC, increment counter and then switch to INC
 		if (isButtonPressed(1)){
 			clear7SEGs();
 			if (bufferValue() == 9) resetBuffer();
@@ -102,6 +117,7 @@ void fsm_short_pressed_run(){
 			status = COUNTER_INC;
 			setTimer(10000);
 		}
+		//pressed DEC, decrement counter
 		if (isButtonPressed(2)){
 			clear7SEGs();
 			if (bufferValue() == 0) updateBuffer(9);
@@ -109,6 +125,7 @@ void fsm_short_pressed_run(){
 			status = COUNTER_DEC;
 			setTimer(10000);
 		}
+		//pressed DEC for 3 seconds, decrement counter and switch to COUNTER_DEC_LONG
 		if (isButtonPressed3s(2)){
 			clear7SEGs();
 			if (bufferValue() == 0) updateBuffer(9);

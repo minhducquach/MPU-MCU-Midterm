@@ -7,4 +7,4 @@
 
 #include "global.h"
 
-int status = INIT;
+int status = INIT;	//state status
